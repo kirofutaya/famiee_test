@@ -1,0 +1,652 @@
+@charset "UTF-8";
+
+/* こうすると1rem=10pxになる */
+html{
+  font-size: 62.5%;
+}
+/* サイズ形式はborder-box */
+*,*::before,*::after{
+  box-sizing: border-box;
+}
+
+body {
+  background: #151515 url('../images/tokyo-origin.jpg') no-repeat fixed center top;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+  font-size: 1.4rem;
+  font-family: Judson, "M PLUS 1p", "Hiragino Kaku Gothic ProN",  Meiryo, sans-serif;
+}
+
+/************** ローディング **********/
+#is-loading {
+ display: block;
+ position: fixed;
+ width: 100%;
+ height: 100%;
+ top: 0px;
+ left: 0px;
+ background: #1c1c1c;
+ z-index: 8;
+}
+#loading {
+ display: none;
+ position: fixed;
+ font-size: 2rem;
+ letter-spacing: 2px;
+ top: 50%;
+ left: 50%;
+ width: 200px;
+ height: 200px;
+ margin-top: -100px;
+ margin-left: -100px;
+ text-align: center;
+ color: #fff;
+ z-index: 9;
+}
+
+/*************** header ************/
+.header{
+  padding: 220px 30px 220px;
+}
+
+.site-title-sub{
+  margin:0 0 30px;
+  letter-spacing: 1px;
+  font-size: 2.2rem;
+}
+.site-title-sub::before,
+.site-title-sub::after{
+  content:'';
+  display: inline-block;
+  width: 140px;
+  height: 2px;
+  margin: 0 30px;
+  background-color: #fff;
+  vertical-align: middle;
+}
+.site-title{
+  margin: 50px 0 40px;
+  font-size: 5rem;
+  letter-spacing: 2px;
+  display: none;
+}
+
+.site-description{
+  margin-bottom: 50px;
+  color:#fff;
+  font-size: 1.6rem;
+  opacity: 0.6;
+  line-height: 2rem;
+}
+
+.button{
+  display: inline-block;
+  width: 200px;
+  padding: 20px;
+  background-color: #777777;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-size: 1.5rem;
+}
+.button:hover{
+  opacity: 0.8;
+}
+.buttons .button{margin:10px}
+
+/* スクロール指示 */
+.pleaseScroll {
+  margin-top: 4rem;
+  padding-top: 7rem;
+  position: relative;
+  font-size: 1.4rem;
+}
+.pleaseScroll::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  margin-left: -12px;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-animation: sdb 1.5s infinite;
+  animation: sdb 1.5s infinite;
+  box-sizing: border-box;
+}
+@-webkit-keyframes sdb {
+  0% {
+    -webkit-transform: rotate(-45deg) translate(0, 0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: rotate(-45deg) translate(-20px, 20px);
+    opacity: 0;
+  }
+}
+@keyframes sdb {
+  0% {
+    transform: rotate(-45deg) translate(0, 0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(-45deg) translate(-20px, 20px);
+    opacity: 0;
+  }
+}
+
+
+/*************** profile ************/
+.profile {
+  margin: 0 0 10rem 5rem;
+  padding:80px 30px;
+  background: #1c1c1c;
+  color: #fff;
+}
+.heading {
+  font-size: 7rem;
+}
+.profile-text{
+  margin:30px 0;
+  line-height: 3rem;
+}
+
+/*************** works ************/
+.works{
+  margin:0 5rem 10rem 0;
+  background-color: #1c1c1c;
+  padding: 80px 0;
+}
+.workText{
+    line-height: 3rem;
+}
+.works-wrapper{
+  display: table;
+  width: 100%;
+  margin-top: 60px;
+  table-layout: fixed;
+}
+.work-box{
+  position: relative;
+  display: table-cell;
+}
+.work-box::after{
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: no-repeat;
+  background-size: 100% 100%;
+  opacity: 0.2;
+  transform: scaleY(-1);
+}
+.work-box.india::after{
+  background-image: url("../images/india3.jpg");
+}
+.work-box.europe::after{
+  background-image: url("../images/prague.jpg");
+}
+.work-box.asia::after{
+  background-image: url("../images/baiyon.jpg");
+}
+.work-box.southAmerica::after{
+  background-image: url("../images/uyuni_star.JPG");
+}
+.work-image{
+  display: block;
+  width: 100%;
+  margin: 0 0 75%;
+}
+.work-description{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 50%;
+}
+.work-description-inner{
+  display: table;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+.work-text{
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 1.2rem;
+  line-height: 2;
+}
+.work-text .button{
+  margin-top: 20px;
+  padding: 3px;
+  width: 60%;
+}
+
+.button-ghost{
+  border: 1px solid #fff;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.work-box:nth-child(even) .work-image{
+  margin: 75% 0 0;
+}
+.work-box:nth-child(even) .work-description,
+.work-box:nth-child(even)::after{
+  top: 0
+}
+
+.work-box{
+  overflow: hidden;
+}
+.work-box img{
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+}
+.work-box:nth-child(even) img{
+  -webkit-transform-origin: top center;
+  transform-origin: top center;
+}
+.work-box:nth-child(odd) img{
+  -webkit-transform-origin: bottom center;
+  transform-origin: bottom center;
+}
+.work-box:hover img{
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+
+
+
+
+
+/*************** skills ************/
+
+
+.skills{
+  margin: 5rem 0 5rem 5rem;
+  background-color: #1c1c1c;
+  padding: 80px 0;
+  color: #fff
+}
+.skills-wrapper{
+  display: table;
+  width: 80%;
+  margin: 50px auto 0;
+  table-layout: fixed;
+}
+.skill-box{
+  display: table-cell;
+}
+.skill-icon{
+  width: 150px;
+  height: 150px;
+  margin-bottom: 30px;
+  border: 2px solid;
+  border-radius: 50%;
+  color: #fffd99;
+  font-size: 8rem;
+  line-height: 142px;
+}
+.skill-title{
+  margin: 0 20px 20px;
+  font-size: 2rem;
+  position: relative;
+}
+.skill-text{
+  margin: 0 20px;
+  line-height: 2;
+}
+.skill-title::after{
+  content:"";
+  border-bottom: 1px solid #fff;
+  position: absolute;
+  right: 3rem;
+  bottom: 0;
+  left: 3rem;
+
+}
+
+
+
+
+
+/*************** contact ************/
+.contact{
+  background-color: rgba(0,0,0,0.3);
+  margin: 5rem;
+  padding: 80px 0 80px;
+  color: #fff;
+}
+.contact-form{
+  width: 50%;
+  margin: 50px auto 0;
+}
+.contact-form input[type=text],
+.contact-form textarea{
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 15px;
+  outline: none;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 0;
+  background-color: rgba(255,255,255,0.1);
+  color: #fff;
+}
+.contact-form textarea{
+  height: 20rem;
+}
+.contact-form input[type="text"]:focus,
+.contact-form textarea:focus{
+  box-shadow: 0 0 8px rgba(247,152,0,0.3);
+}
+
+.contact-form input[type="submit"]{
+  display: block;
+  width: 200px;
+  margin: 0 auto 0;
+  padding: 15px;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 5px;
+  background-color: transparent;
+  color: rgba(255,255,255,0.6);
+  cursor: pointer;
+}
+.contact-form input[type="submit"]:hover{
+  background-color: rgba(255,255,255,0.05);
+}
+.hidden_sentence{
+  font-size: 1.4rem;
+  color: #fff;
+  display: none;
+}
+
+.sns-wrapper{
+  display: table;
+  width: 20%;
+  margin: 40px auto 0;
+  table-layout: fixed;
+}
+.sns-box{
+  display: table-cell;
+  width: 100%;
+  margin: 30px 20px;
+}
+.snsbox a{
+  text-decoration: none;
+}
+.sns-icon{
+  font-size: 4rem;
+  color: #fff;
+}
+.sns-icon:hover{
+  text-shadow: 0 0 50px rgba(255,255,255,0.2);
+}
+
+.footer{
+  padding: 12px 0;
+  font-size: 1.3rem;
+}
+
+
+/* スクロールボタン */
+.back-to-top {
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    color: #fff;
+    width: 5rem;
+    height: 5rem;
+    z-index: 2;
+    display: none;
+}
+.back-to-top:before {
+    content: "";
+    display: block;
+    width: 5rem;
+    height: 5rem;
+    position: absolute;
+    border-radius: 2.5rem;
+    border: 0.2rem 0.2rem 0.2rem 0.2rem;
+    border-color: #fff;
+    left: 0;
+    top: 0;
+    background: #696969;
+}
+.back-to-top i {
+    display: block;
+    text-align: center;
+    width: 5rem;
+    height: 5rem;
+    line-height: 5rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+/* .back-to-top:after {
+    content: "↑";
+    display: block;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    position: absolute;
+    left: 0;
+    top: 0;
+} */
+
+
+/*--------- jQuery用 ----------*/
+/* 画面外にいる状態 */
+.fadeinLeft {
+    opacity : 0;
+    transform : translate(-40px, 0px);
+    transition : all 4000ms;
+    }
+.fadeinRight {
+    opacity : 0;
+    transform : translate(40px, 0px);
+    transition : all 4000ms;
+    }
+
+/* 画面内に入った状態 */
+.fadeinLeft.scrollin {
+    opacity : 0.5;
+    transform : translate(0, 0);
+    }
+.fadeinRight.scrollin {
+    opacity : 0.5;
+    transform : translate(0, 0);
+    }
+
+
+
+/* スライド */
+.scroll-wrap{
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.slideConts {
+  -webkit-transition: 2s;
+  -o-transition: 2s;
+  transition: 2s;
+}
+.slideContsL {
+  transform: translate(-1500px, 0);
+}
+.slideContsR {
+  transform: translate(1500px, 0);
+}
+.slideContsL.show {
+  transform: translate(-50px, 0);
+}
+.slideContsR.show {
+  transform: translate(50px, 0);
+}
+
+
+/************************ メディアクエリ ***************/
+@media (max-width: 1024px) {
+  .heading{
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px;
+    margin: 30px 0 15px;
+    letter-spacing: 2px;
+    font-size: 4rem;
+  }
+  .heading::before,
+  .heading::after{
+    content:"";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-bottom: 1px solid #fff;
+  }
+  .heading::before{bottom: 5px}
+  .fadeinLeft.scrollin {opacity : 1;}
+  .fadeinRight.scrollin {opacity : 1;}
+
+
+}
+@media (max-width: 768px) {
+  .site-title-sub::before,
+  .site-title-sub::after{
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+  }
+  .site-title-sub{
+    font-size: 1.7rem;
+  }
+  .site-title{
+    font-size: 4rem;
+    margin-top: 35px
+  }
+  .header{
+    padding-top: 60px
+  }
+  .button:hover{
+    opacity: 1;
+  }
+
+  .heading{
+    font-size: 2.5rem;
+  }
+
+  .body{
+    font-size: 1.3rem
+  }
+
+  .profile{padding-top: 40px}
+  .sns-wrapper{width: 60%}
+  .sns-icon{font-size: 3rem}
+
+  .works{padding-top: 60px}
+  .works-wrapper,
+  .work-box{
+    display: block;
+  }
+
+  .work-image{display: none}
+  .work-description{position: relative}
+
+  .work-box::after{
+    top:0;
+    height: 100%;
+    background-size: cover;
+    transform: none;
+  }
+  .work-text{
+    padding:30px 0;
+  }
+
+  .skills-wrapper,
+  .skill-box{
+    display: block;
+    margin: 60px auto;
+  }
+  .skill-icon{
+    width:100px;
+    height: 100px;
+    font-size: 5rem;
+    line-height: 92px
+  }
+  .skill-text{margin:0 }
+
+  .contact-form{width: 80%}
+  .contact{padding-bottom: 80px}
+}
+
+@media (max-width: 424px) {
+  #loading {
+   font-size: 2rem;
+   top: 30%;
+  }
+
+  /* iphoneはこうやらないposition:coverが効かない！ */
+  body {
+    background-image: none;
+    position: relative;
+  }
+  body:before{
+  content:"";
+  display:block;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:-1;
+  width:100%;
+  height:100vh;
+  background:url('../images/tokyo2_revised.jpg') center no-repeat;
+  background-size:cover;
+  }
+
+
+  .site-description{
+    opacity: 0.8;
+  }
+
+  .profile{
+    text-align: left;
+    margin: 0 0 10rem 1rem;
+  }
+  .works{
+    margin: 0 1rem 10rem 0;
+  }
+  .skills{
+    margin: 0 0 10rem 1rem;
+  }
+  .slideContsR.show{
+    transform: translate(2rem,0);
+  }
+  .slideContsL.show{
+    transform: translate(-2rem,0);
+  }
+
+  .contact form{
+    display: none;
+  }
+  .hidden_sentence{
+    display: block;
+  }
+
+}
