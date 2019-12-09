@@ -1,33 +1,28 @@
 // ロード時に作動
 $(window).on('load', function(){
-  $('#is-loading').delay(900).fadeOut(800);
+  $('#loading_body').delay(900).fadeOut(800);
   $('#loading').delay(600).fadeOut(300);
-  $('#loading__wrapper').css('display', 'block');
-  $('.title').delay(1400).fadeIn(2000);
+  $('.site-title').delay(1000).fadeIn(2500);
 });
 
 
 $(function(){
-// ローディング
 
+  // ローディングの幅を設定
+    $(function() {
+    var h = $(window).height();
+     $('#loading_body ,#loading').height(h).css('display','block');
+    });
 
-// ローディング
-  $(function() {
-  var h = $(window).height();
-   $('#loading__wrapper').css('display','none');
-   $('#is-loading ,#loading').height(h).css('display','block');
-  });
-
-  $(function(){
-  setTimeout('stopload()',10000);
-  });
-
-  function stopload(){
-   $('#loading__wrapper').css('display','block');
-   $('#is-loading').delay(900).fadeOut(800);
-   $('#loading').delay(600).fadeOut(300);
-   $('.site-title').delay(1000).fadeIn(2500);
-  }
+    // ローディングに時間かかりすぎの場合にローディング中し
+    $(function(){
+    setTimeout('stopload()',10000);
+    });
+    function stopload(){
+     $('#loading_body').delay(900).fadeOut(800);
+     $('#loading').delay(600).fadeOut(300);
+     $('.site-title').delay(1000).fadeIn(2500);
+    }
 
 // サイトタイトルのフェードイン
   // $('.site-title').ready(function(){
