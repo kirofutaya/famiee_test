@@ -660,12 +660,12 @@ height: 100%;
   .first-section .description, .second-section .description{
     text-align: left;
     line-height: 3rem;
-    padding: 0
+    padding: 0;
+    color: rgba(255,255,255,0.8);
   }
 
-  .h2 {font-size: 1rem;}
-  .site-title-sub{font-size: 1rem,}
-
+  .site-title-sub{font-size: 2rem!important;}
+  .first-section .site-title-sub{margin-bottom: 5rem;}
 
   .site-description{
     opacity: 0.8;
