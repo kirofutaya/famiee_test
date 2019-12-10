@@ -552,7 +552,7 @@ height: 100%;
   .site-title-sub::before,
   .site-title-sub::after{
     display: block;
-    width: 80%;
+    width: 100%;
     margin: 10px auto;
   }
   .site-title-sub{
