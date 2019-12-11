@@ -113,6 +113,10 @@ header{
 .buttons .button{margin:10px}
 
 /* スクロール指示 */
+.scrollbutton{
+  text-decoration: none;
+  color: white;
+}
 .pleaseScroll {
   margin-top: 4rem;
   padding-top: 7rem;
