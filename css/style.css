@@ -190,7 +190,6 @@ header{
 .second-section .site-title-sub {
   font-size: 3rem;
   margin: auto;
-  padding-bottom: 5rem;
 }
 .second-section .description{
   line-height: 4.5rem;
@@ -447,7 +446,8 @@ height: 100%;
 
 .footer{
   background-color: rgba(0,0,0,0.8);
-  padding: 3rem 0 1.2rem;
+  padding: 2rem 0 1.2rem;
+  margin-top: 3rem;
   font-size: 1.3rem;
 }
 
